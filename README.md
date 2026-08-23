@@ -1,50 +1,12 @@
 # HR Analytics – Employee Turnover Prediction
 
-## Navigation
-
-### ÉTAPE 1 - Analyse exploratoire et Nettoyage
-
-[Ouvrir le notebook E1](./notebooks/P4_E1_analyse_exploratoire.ipynb)
-
-### Contenu de l'analyse
-
-- Analyse exploratoire
-- Jointure des données
-- Analyse qualitative
-- Analyse quantitative
-- Synthèse des insights
-
----
-
-## Structure du projet
-
-```text
-HR_Analytics_Prediction_Turnover_Employee_ESN/
-│
-├── data/
-│
-├── notebooks/
-│   └── P4_E1_analyse_exploratoire.ipynb
-│
-├── presentation/
-│
-├── src/
-│   └── project_4/
-│
-├── .gitignore
-├── .python-version
-├── pyproject.toml
-├── uv.lock
-└── README.md
-
-=======
 ## Contexte
 
 Une entreprise de services du numérique (ESN) souhaite mieux comprendre les facteurs associés au départ de ses employés.
 
-L'entreprise dispose de plusieurs fichiers de données contenant des informations sur les employés, leur situation professionnelle et leurs caractéristiques.
+L'entreprise dispose de plusieurs sources de données contenant des informations sur les employés, leur situation professionnelle, leurs évaluations et leur perception de leur environnement de travail.
 
-L'objectif est d'explorer et de croiser ces données afin d'identifier les principales tendances associées à l'attrition et de préparer les données pour la modélisation prédictive.
+L'objectif est de croiser et d'analyser ces données afin d'identifier les principaux facteurs associés à l'attrition et de préparer les données pour la modélisation prédictive.
 
 ## Objectif
 
@@ -56,164 +18,113 @@ Identifier les principaux facteurs associés à l'attrition des employés afin d
 - Construire un DataFrame central à partir des fichiers disponibles.
 - Réaliser une analyse exploratoire des variables qualitatives et quantitatives.
 - Identifier les différences entre les employés ayant quitté l'entreprise et ceux restés.
-- Faire ressortir les variables potentiellement associées à l'attrition.
-- Préparer les données pour les étapes de modélisation.
+- Identifier les variables potentiellement associées à l'attrition.
+- Préparer les données pour la modélisation.
+- Construire et évaluer des modèles de Machine Learning permettant de prédire l'attrition.
 
 ---
 
-# ÉTAPE 1 - Analyse exploratoire et Nettoyage
+# Navigation
 
-## Importation des librairies
+## ÉTAPE 1 – Analyse exploratoire et nettoyage
 
-Importation des principales bibliothèques Python utilisées pour l'analyse et la visualisation des données.
+[Ouvrir le notebook E1](./notebooks/P4_E1_analyse_exploratoire.ipynb)
 
-## Importation des jeux de données
+### Contenu
 
-Importation des trois sources de données :
-
-- `df_sirh`
-- `df_evaluation`
-- `df_sondage`
-
-## Analyse exploratoire
-
-### Base `df_evaluation`
-
-- Dimensions
-- Statistiques descriptives
-- Informations générales
-- Doublons
-- Valeurs manquantes
-- Types des données
-- Valeurs uniques
-- Vérification des colonnes
-- Identification des variables quantitatives et qualitatives
-
-### Base `df_sirh`
-
-- Dimensions
-- Statistiques descriptives
-- Informations générales
-- Doublons
-- Valeurs manquantes
-- Types des données
-- Valeurs uniques
-- Vérification des colonnes
-- Identification des variables quantitatives et qualitatives
-
-### Base `df_sondage`
-
-- Dimensions
-- Statistiques descriptives
-- Informations générales
-- Doublons
-- Valeurs manquantes
-- Types des données
-- Valeurs uniques
-- Vérification des colonnes
-- Identification des variables quantitatives et qualitatives
-
-## Nettoyage des données
-
-Nettoyage et préparation des différentes colonnes afin de rendre les données exploitables pour la jointure et l'analyse.
-
-## Jointure des données
-
-Identification des clés communes entre les trois sources et création d'un DataFrame centralisé.
-
-### DataFrame central
-
-Le `df_central` regroupe les informations issues des différentes sources et constitue la base utilisée pour l'analyse exploratoire.
-
-## Analyse qualitative
-
-Analyse de l'attrition selon différentes variables qualitatives :
-
-- Heures supplémentaires
-- Fréquence des déplacements
-- Département
-- Statut marital
-- Genre
-- Niveau d'éducation
-- Poste
-- Satisfaction envers l'environnement de travail
-- Satisfaction envers la nature du travail
-- Satisfaction envers l'équipe
-- Équilibre vie professionnelle / vie personnelle
-
-### Synthèse des variables qualitatives
-
-Les variables sont classées selon leur relation probable avec l'attrition :
-
-- **Forte**
-- **Modérée**
-- **Faible**
-
-## Analyse quantitative
-
-Analyse de la distribution des variables quantitatives selon l'attrition à l'aide notamment de boxplots.
-
-Variables étudiées :
-
-- Âge
-- Revenu mensuel
-- Expérience totale
-- Ancienneté dans l'entreprise
-- Ancienneté dans le poste actuel
-- Nombre d'expériences précédentes
-- Participation au PEE
-- Nombre de formations suivies
-- Distance domicile-travail
-- Années depuis la dernière promotion
-- Années sous le responsable actuel
-- Augmentation salariale précédente
-
-### Synthèse des variables quantitatives
-
-Les variables sont classées selon leur relation probable avec l'attrition :
-
-- **Forte**
-- **Modérée**
-- **Faible**
-
-## Insights principaux
-
-L'analyse exploratoire met notamment en évidence une attrition plus importante chez :
-
-- Les employés effectuant des heures supplémentaires.
-- Les employés effectuant des déplacements professionnels fréquents.
-- Certains postes, notamment les Représentants Commercial.
-- Les employés présentant une faible satisfaction, particulièrement concernant l'équilibre vie professionnelle / vie personnelle.
-- Les employés ayant un revenu mensuel plus faible.
-- Les employés ayant une ancienneté plus courte dans l'entreprise.
-- Les employés ayant une distance domicile-travail plus importante.
-
-Certaines variables, telles que le genre, les formations suivies et la participation au PEE, présentent peu de différences entre les employés ayant quitté l'entreprise et ceux restés.
-
-> Ces résultats correspondent à des associations observées lors de l'analyse exploratoire et ne permettent pas de conclure à une relation de causalité.
->>>>>>> origin/main
+- Importation et exploration des sources de données
+- Nettoyage des données
+- Jointure des différentes sources
+- Construction du DataFrame central
+- Analyse des variables qualitatives
+- Analyse des variables quantitatives
+- Identification des facteurs associés à l'attrition
+- Synthèse des principaux insights
 
 ---
 
-## Structure du projet
+## ÉTAPE 2 – Préparation des données pour la modélisation
+
+[Ouvrir le notebook E2](./notebooks/P4_E2_preparation_modelisation.ipynb)
+
+### Contenu
+
+- Définition de la variable cible `y`
+- Définition des variables explicatives `X`
+- Identification des variables quantitatives et qualitatives
+- Analyse des corrélations avec Pearson
+- Analyse des relations non linéaires avec des pairplots
+- Analyse complémentaire avec Spearman
+- Sélection des variables fortement corrélées
+- Sélection des méthodes d'encodage selon la nature des variables
+- Encodage des variables qualitatives nominales avec `OneHotEncoder`
+- Conservation numérique des variables ordinales
+- Création d'un `ColumnTransformer`
+- Vérification du preprocessing
+- Création d'une fonction de préparation des données
+- Validation et exportation du jeu de données final
+
+### Données préparées
+
+Le jeu de données final destiné à la modélisation contient :
+
+- **1 470 observations**
+- **46 features numériques**
+- **1 variable cible** : `a_quitte_l_entreprise`
+- **0 valeur manquante**
+
+Les données préparées sont disponibles dans :
+
+`data/processed/df_modelisation.csv`
+
+---
+
+# ÉTAPE 3 – Modélisation
+
+> À venir
+
+### Objectif
+
+Construire et comparer plusieurs modèles de Machine Learning afin de prédire l'attrition des employés.
+
+---
+
+# ÉTAPE 4 – Évaluation et interprétation
+
+> À venir
+
+### Objectif
+
+Évaluer les performances des modèles, identifier le modèle le plus pertinent et interpréter les principaux facteurs associés aux prédictions.
+
+---
+
+# Structure du projet
 
 ```text
 HR_Analytics_Prediction_Turnover_Employee_ESN/
 │
 ├── data/
-<<<<<<< HEAD
-=======
-│   ├── extrait_sirh.csv
-│   ├── extrait_eval.csv
-│   └── extrait_sondage.csv
->>>>>>> origin/main
+│   ├── raw/
+│   │   ├── extrait_sirh.csv
+│   │   ├── extrait_eval.csv
+│   │   └── extrait_sondage.csv
+│   │
+│   └── processed/
+│       ├── df_central.csv
+│       └── df_modelisation.csv
 │
 ├── notebooks/
-│   └── P4_E1_analyse_exploratoire.ipynb
+│   ├── P4_E1_analyse_exploratoire.ipynb
+│   └── P4_E2_preparation_modelisation.ipynb
 │
-├── README.md
-<<<<<<< HEAD
-└── .gitignore
-=======
-└── .gitignore
->>>>>>> origin/main
+├── presentation/
+│
+├── src/
+│   └── project_4/
+│
+├── .gitignore
+├── .python-version
+├── pyproject.toml
+├── uv.lock
+└── README.md
