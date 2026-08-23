@@ -1,43 +1,160 @@
 # HR Analytics – Employee Turnover Prediction
 
-## Project Overview
+## Contexte
 
-This project aims to analyze employee turnover within an ESN (Entreprise de Services du Numérique).
+Une entreprise de services du numérique (ESN) souhaite mieux comprendre les facteurs associés au départ de ses employés.
 
-The objective is to identify factors potentially associated with employee attrition and, in later stages, develop predictive models.
+L'entreprise dispose de plusieurs fichiers de données contenant des informations sur les employés, leur situation professionnelle et leurs caractéristiques.
 
-## E1 – Exploratory Data Analysis
+L'objectif est d'explorer et de croiser ces données afin d'identifier les principales tendances associées à l'attrition et de préparer les données pour la modélisation prédictive.
 
-The first stage focuses on understanding and exploring the HR data.
+## Objectif
 
-### Completed
+Identifier les principaux facteurs associés à l'attrition des employés afin de mieux comprendre les causes de départ au sein de l'ESN et de préparer la construction d'un modèle prédictif.
 
-- Analysis of the three original datasets
-- Data cleaning and preparation
-- Identification of qualitative and quantitative variables
-- Creation of a centralized DataFrame through data integration
-- Descriptive statistics
-- Exploratory visualizations
-- Analysis of attrition according to qualitative and quantitative variables
-- Synthesis of the main exploratory insights
+## Objectifs Data
 
-### Main exploratory insights
+- Comprendre et nettoyer les différentes sources de données.
+- Construire un DataFrame central à partir des fichiers disponibles.
+- Réaliser une analyse exploratoire des variables qualitatives et quantitatives.
+- Identifier les différences entre les employés ayant quitté l'entreprise et ceux restés.
+- Faire ressortir les variables potentiellement associées à l'attrition.
+- Préparer les données pour les étapes de modélisation.
 
-The analysis suggests that attrition is particularly associated with:
+---
 
-- Overtime
-- Frequent business travel
-- Certain job positions
-- Lower satisfaction, especially regarding work-life balance
-- Lower monthly income
-- Lower company tenure
-- Greater distance between home and workplace
+# ÉTAPE 1 - Analyse exploratoire et Nettoyage
 
-Some variables, such as gender, training and PEE participation, show little difference between employees who left and those who remained.
+## Importation des librairies
 
-These observations represent associations identified during exploratory analysis and do not imply causality.
+Importation des principales bibliothèques Python utilisées pour l'analyse et la visualisation des données.
 
-# HR Analytics – Employee Turnover Prediction
+## Importation des jeux de données
+
+Importation des trois sources de données :
+
+- `df_sirh`
+- `df_evaluation`
+- `df_sondage`
+
+## Analyse exploratoire
+
+### Base `df_evaluation`
+
+- Dimensions
+- Statistiques descriptives
+- Informations générales
+- Doublons
+- Valeurs manquantes
+- Types des données
+- Valeurs uniques
+- Vérification des colonnes
+- Identification des variables quantitatives et qualitatives
+
+### Base `df_sirh`
+
+- Dimensions
+- Statistiques descriptives
+- Informations générales
+- Doublons
+- Valeurs manquantes
+- Types des données
+- Valeurs uniques
+- Vérification des colonnes
+- Identification des variables quantitatives et qualitatives
+
+### Base `df_sondage`
+
+- Dimensions
+- Statistiques descriptives
+- Informations générales
+- Doublons
+- Valeurs manquantes
+- Types des données
+- Valeurs uniques
+- Vérification des colonnes
+- Identification des variables quantitatives et qualitatives
+
+## Nettoyage des données
+
+Nettoyage et préparation des différentes colonnes afin de rendre les données exploitables pour la jointure et l'analyse.
+
+## Jointure des données
+
+Identification des clés communes entre les trois sources et création d'un DataFrame centralisé.
+
+### DataFrame central
+
+Le `df_central` regroupe les informations issues des différentes sources et constitue la base utilisée pour l'analyse exploratoire.
+
+## Analyse qualitative
+
+Analyse de l'attrition selon différentes variables qualitatives :
+
+- Heures supplémentaires
+- Fréquence des déplacements
+- Département
+- Statut marital
+- Genre
+- Niveau d'éducation
+- Poste
+- Satisfaction envers l'environnement de travail
+- Satisfaction envers la nature du travail
+- Satisfaction envers l'équipe
+- Équilibre vie professionnelle / vie personnelle
+
+### Synthèse des variables qualitatives
+
+Les variables sont classées selon leur relation probable avec l'attrition :
+
+- **Forte**
+- **Modérée**
+- **Faible**
+
+## Analyse quantitative
+
+Analyse de la distribution des variables quantitatives selon l'attrition à l'aide notamment de boxplots.
+
+Variables étudiées :
+
+- Âge
+- Revenu mensuel
+- Expérience totale
+- Ancienneté dans l'entreprise
+- Ancienneté dans le poste actuel
+- Nombre d'expériences précédentes
+- Participation au PEE
+- Nombre de formations suivies
+- Distance domicile-travail
+- Années depuis la dernière promotion
+- Années sous le responsable actuel
+- Augmentation salariale précédente
+
+### Synthèse des variables quantitatives
+
+Les variables sont classées selon leur relation probable avec l'attrition :
+
+- **Forte**
+- **Modérée**
+- **Faible**
+
+## Insights principaux
+
+L'analyse exploratoire met notamment en évidence une attrition plus importante chez :
+
+- Les employés effectuant des heures supplémentaires.
+- Les employés effectuant des déplacements professionnels fréquents.
+- Certains postes, notamment les Représentants Commercial.
+- Les employés présentant une faible satisfaction, particulièrement concernant l'équilibre vie professionnelle / vie personnelle.
+- Les employés ayant un revenu mensuel plus faible.
+- Les employés ayant une ancienneté plus courte dans l'entreprise.
+- Les employés ayant une distance domicile-travail plus importante.
+
+Certaines variables, telles que le genre, les formations suivies et la participation au PEE, présentent peu de différences entre les employés ayant quitté l'entreprise et ceux restés.
+
+> Ces résultats correspondent à des associations observées lors de l'analyse exploratoire et ne permettent pas de conclure à une relation de causalité.
+
+---
 
 ## Structure du projet
 
