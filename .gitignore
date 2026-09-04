@@ -7,7 +7,13 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+
 # Raw datasets
 data/raw/
-data/raw/
+
+# Generated / processed datasets
+data/processed/
+
+# Notebook backups
+notebooks/bkp/
