@@ -1,0 +1,12 @@
+ .gitignore                                         |   10 [32m+[m[31m-[m
+ notebooks/P4_E1_analyse_exploratoire.ipynb         |  984 [32m++++[m[31m-----[m
+ notebooks/P4_E2_preparation_modelisation.ipynb     |  669 [32m+++[m[31m---[m
+ .../P4_E3_premier_modele_classification.ipynb      |  390 [32m++[m[31m--[m
+ notebooks/P4_E4_amelioration_classification.ipynb  |   25 [32m+[m
+ notebooks/P4_E5_optimisation_interpretation.ipynb  | 2229 [32m++++++++++++++++++++[m
+ src/{project_4 => }/__init__.py                    |    0
+ src/data_export.py                                 |    2 [32m+[m
+ src/data_split.py                                  |   23 [32m+[m
+ src/feature_engineering.py                         |  102 [32m+[m
+ src/preprocessing.py                               |   79 [32m+[m
+ 11 files changed, 3436 insertions(+), 1077 deletions(-)
