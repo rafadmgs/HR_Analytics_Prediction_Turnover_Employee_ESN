@@ -1,4 +1,4 @@
-# HR Analytics – Employee Turnover Prediction
+# HR Analytics – Employee Attrition Prediction
 
 ## Contexte
 
